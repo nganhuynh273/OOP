@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[Bài tập] Xây dựng lớp mô tả Temperature</title>
+  </head>
+  <body>
+    <label for="">Nhập vào nhiệt độ</label><br />
+    <input
+      type="text"
+      value=""
+      onfocus="this.value"
+      id="Temperature"
+      min="-273"
+    />Temperature<br />
+    <button onclick="transitionF()">Chuyển độ C sang độ F</button>
+    <button onclick="transitionKenvin()">Chuyển độ C sang độ Kenvin</button>
+
+    <div>
+      <p id="showTransitionF"></p>
+      <p id="showTransitionKenvin"></p>
+    </div>
+    <script>
+      let Temperature = function (temp) {
+        this.celsius = temp;
+
+        this.toFahrenheit = function () {
+          return parseFloat(this.celsius * 1.8 + 32).toFixed(2);
+        };
+
+        this.toKelvin = function () {
+          return this.celsius + 273;
+        };
+      };
+
+      function transitionF() {
+        celsius = Number(document.getElementById("Temperature").value);
+        if (celsius) {
+          let temperature = new Temperature(celsius);
+          document.getElementById(
+            "showTransitionF"
+          ).innerHTML = `Độ F là :  ${temperature.toFahrenheit()}`;
+        }
+      }
+      function transitionKenvin() {
+        celsius = Number(document.getElementById("Temperature").value);
+        if (celsius) {
+          let temperature = new Temperature(celsius);
+          document.getElementById(
+            "showTransitionKenvin"
+          ).innerHTML = `Độ Kevin là :  ${temperature.toKelvin()}`;
+        }
+      }
+    </script>
+  </body>
+</html>

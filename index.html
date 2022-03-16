@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <script>
+      let courses = ["JavaScript", "ReactJS", "Angular", "Java"];
+    //   const  htmls = courses.map(function(courses){
+    //       return `<li>${string}</li>`
+    const  htmls = courses.map((courses) => `<li>${courses}</li>`)
+    //   document.write(htmls.join(""))
+    document.write(`<ol>${htmls.join("")}</ol>`)
+    </script>
+    
+    
+  </body>
+</html>
