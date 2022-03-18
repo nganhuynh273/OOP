@@ -9,12 +9,60 @@
   <body>
     
     <script>
-      let courses = ["JavaScript", "ReactJS", "Angular", "Java"];
-    //   const  htmls = courses.map(function(courses){
-    //       return `<li>${string}</li>`
-    const  htmls = courses.map((courses) => `<li>${courses}</li>`)
-    //   document.write(htmls.join(""))
-    document.write(`<ol>${htmls.join("")}</ol>`)
+      class Apple {
+    constructor(weight) {
+      this.weight = weight;
+    }
+    getWeight() {
+      return this.weight;
+    } 
+    decrease(){
+      this.weight = this.weight - 1;   
+    }
+  }
+  class Human {
+    constructor(name, gender, weight) {
+      this.name = name;
+      this.gender = gender;
+      this.weight = weight;
+    }
+    getWeight() {
+        return this.weight;
+    }
+    getName() {
+        return this.name;
+    }
+    eatApple(myApple){
+        if(this.checkApple(myApple))
+        {
+            this.weight = this.weight +1;
+             myApple.decrease();
+        }else{
+            console.log(`the apple not exist`);
+        }
+        // if(!checkApple(myApple)){
+        //     console.log(`the apple not exist`);
+        //     return;
+        // }
+        // this.weight = this.weight +1;
+        //      myApple.decrease();
+    }
+    getSay(name, content) {
+		document.getElementById("say" + name).innerHTML = name + " say: " + content;
+	}
+    checkApple(myApple){
+    //    if(myApple.getWeight()==0)
+    //     return false;
+    //    else
+    //     return true;
+        console.log(`the weight 's apple${ myApple.getWeight()}}`);
+        return myApple.getWeight()!=0;
+    }
+  }
+  let appleHong = new Apple(10,20);
+  let person1 = new Human("Eva", "Female", 50);
+  let person2 = new Human("Adam", "Male", 60);
+  person1.eatApple(appleHong);
     </script>
     
     
